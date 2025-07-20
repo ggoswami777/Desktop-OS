@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+html,body{
+    width: 100%;
+    height: 100vh;
+    /* background-color: black; */
+}
+.main{
+    background-image: url('https://4kwallpapers.com/images/wallpapers/windows-logo-m1-chip-black-background-gradient-windows-10-5k-3840x2160-5918.jpg');
+    background-size: max(1200px, 100vw);
+    height:100vh;
+    position: relative;
+    background-position: center center;
+    overflow:hidden;
+}
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 8vh;
+    bottom: 0;
+    background-color: rgba(40, 40, 40, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+}
+.left-section-footer{
+    width: 150px;
+    margin: 3px 3px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+.weather-image-div{
+    height: 100%;
+    width: fit-content;
+    
+    
+}
+.weather-image-div>img{
+    height: 100%;
+    width: fit-content;
+
+
+}
+.weather-details{
+    text-align: center;
+    
+
+}
+.temperature{
+    font-size: 16px;
+    color: white;
+}
+.temperature-details{
+    font-size: 10px;
+    padding-top: 5px;
+    color: white;
+}
+.middle-section-footer{
+    gap: 20px;
+}
+.windows-logo{
+    height: 35px;
+    border-radius: 4px;
+    width: fit-content;
+    transition:  all 0.2s ease-in-out;
+}
+.windows-logo>img{
+    height: 100%;
+    width: 100%;
+}
+.search-bar input{
+    padding: 10px 20px;
+    padding-left: 40px;
+    border-radius: 25px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    background-color: rgb(48, 48, 48);
+   
+}
+.ri-search-line{
+    position:absolute;
+    font-size: 20px;
+    top: 16px;
+    left: 36.8%;
+
+}
+.taskbar{
+    gap: 20px;
+}
+.tasks{
+    border-radius: 4px;
+    height: 35px;
+    width:fit-content ;
+    transition:  all 0.2s ease-in-out;
+}
+.tasks img{
+    height: 100%;
+    width: 100%;
+}
+.right-section-footer{
+    padding-right: 10px;
+    gap: 15px;
+}
+.footer-arrow-icon{
+    height: 35px;
+    padding:5px 5px ;
+    border-radius: 4px;
+}
+.system-language{
+    color: white;
+    text-align: center;
+    padding: 3px 3px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 4px;
+    cursor:default;
+}
+.wifi-audio-battery{
+    padding: 6px 6px;
+    border-radius: 4px;
+}
+.wifi-audio-battery span{
+    font-size: 18px;
+
+}
+i{
+    color: white;
+}
+.time-date{
+    font-size: 13px;
+    text-align: end;
+    color: white;
+    padding: 4px 4px;
+    border-radius: 4px;
+    cursor:default;
+}
+
+/* footer hover effects belowwwww */
+.tasks:hover,.windows-logo:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    transform: scale(1.05);
+    box-shadow: 0 0 6px rgba(255,255,255,0.2);
+}
+.right-section-footer div:hover,.left-section-footer:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
