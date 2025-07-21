@@ -191,7 +191,7 @@ i{
     width: 45vw;
     height: 85vh;
     transition: all 0.3s ease-in;
-    bottom: -700px;
+    bottom: -1000px;
     border-radius: 8px;
     background-color: rgba(40, 40, 40, 0.3);
     backdrop-filter: blur(20px);
@@ -277,4 +277,77 @@ i{
     height: 50px;
     font-size: 25px;
     padding-bottom: 10px;
+}
+/* shutdown function */
+.windows-shutdown,.windows-opening{
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background-color:#000;
+    display: none;
+}
+.windows-shutdown-middle-div,.windows-opening-middle-div{
+    height: 15vh;
+    width: 40vh;
+    position: absolute;
+    gap: 20px;
+
+
+
+}
+.circle{
+    width: 65px;
+    height: 65px;
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    border-top: 6px solid #00bcd4;
+
+}
+.text{
+
+    color: #ffffffcc;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+@keyframes fadeout{
+    to{
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+/* pc is off page */
+.windows-off-main{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: 2;
+    gap: 10px;
+    display: none;
+
+}
+.power-button{
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: rgba(48, 48, 48,0.7);
+    color: white;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+}
+.power-button:hover{
+
+    
+    background-color:rgba(48, 48, 48,1) ;
 }
