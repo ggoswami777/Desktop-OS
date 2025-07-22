@@ -390,3 +390,68 @@ i{
   font-size: 12px;
   line-height: 1;
 }
+/* apps */
+.app-window{
+   
+    
+    width: 100%;
+    height: 100%;
+    background-color: white;
+   
+    z-index: 1;
+    resize: none;
+    overflow: hidden;
+    
+    
+
+
+}
+.app-window iframe{
+    height: 100%;
+    width: 100%;
+    border: none;
+    overflow: hidden;
+    resize: none;
+    
+}
+
+.navigations{
+    position:absolute;
+    height: 71%;
+    width: 41%;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display: none;
+
+    
+}
+.circles-div{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 8px;
+    background-color:rgb(39, 39, 39);
+}
+.circles-div div{
+    align-items: flex-start;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+
+
+}
+.red-circle{
+    background-color: rgb(175, 0, 0);
+}
+.green-circle{
+    background-color: rgb(3, 168, 3);
+}
+.yellow-circle{
+    background-color: yellow;
+}
