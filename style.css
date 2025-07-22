@@ -351,3 +351,42 @@ i{
     
     background-color:rgba(48, 48, 48,1) ;
 }
+
+
+/* desktop icons */
+/* .desktop-icons-div{
+    height: 91.5vh;
+    width: 25vw;
+    position:absolute;
+    left: 10px;
+    top: 0;
+    padding: 25px 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    
+    
+} */
+.desktop-icons-div .icons {
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.desktop-icons-div {
+  height: 91.5vh;
+  width: 25vw;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding: 25px 5px;
+  display: flex;
+  gap: 25px; /* You can adjust this */
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.icons p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1;
+}

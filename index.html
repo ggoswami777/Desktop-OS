@@ -1,119 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desktop OS</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="utils.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="main"> 
-        <div class="windows-off-main flex flex-coloumn align-center justify-center">
-            <div class="windows-off-message">
-                 <p class="text">This PC is currently switched off</p>
-            </div>
-           
-            <button class="power-button">Power on</button>
+    <link rel="stylesheet" href="utils.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="desktop-icons-div ">
+        <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/chrome.png" width="45px" alt="" />
+          </div>
+
+          <p>Google Chome</p>
         </div>
-         <div class="windows-opening flex align-center justify-center">
-            <div class="windows-opening-middle-div flex flex-coloumn align-center">
-                <div class="circle"></div>
-                <p class="text">Turning on the PC...</p>
-            </div>
+        <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/calculator.png" width="45px" alt="" />
+          </div>
+         
+
+          <p>Calculator</p>
         </div>
-        <div class="windows-shutdown flex align-center justify-center">
-            <div class="windows-shutdown-middle-div flex flex-coloumn align-center">
-                <div class="circle"></div>
-                <p class="text">Shutting down...</p>
-            </div>
+         <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/notepad.png" width="45px" alt="" />
+          </div>
+
+          <p>Notepad</p>
         </div>
-        <div class="start-menu">
-            <h2>Pinned</h2>
-            <div class="search-bar ">
-                    <i class="ri-search-line"></i>
-                    <input class="start-menu-searchbar" type="text" placeholder="Search">
-            </div>
-            <div class="icons-div">
-                <div class="icons">
-                    <div class="icon-image flex justify-center ">
-                        <img src="footer images/chrome.png" width="45px" alt="">
-                    </div>
-                    
-                    <p >Google Chome</p>
-                </div>
-                <div class="icons">
-                    <div class="icon-image flex justify-center ">
-                        <img src="footer images/calculator.png" width="45px" alt="">
-                    </div>
-                    
-                    <p >Calculator</p>
-                </div>
-            </div>
-            <div class="start-menu-footer flex justify-between">
-                <div class="profile-section flex">
-                    <div class="profile-image  ">
-                        <img src="footer images/WhatsApp Image 2025-07-21 at 11.40.14_66dfc67c.jpg" alt="">
-                    </div>
-                    <div class="profile-name">Gaurav Goswami</div>
-                </div>
-                <div class="shutdown-button flex align-center justify-center">
-                    <i class="ri-shut-down-line"></i>
-                </div>
-            </div>
+         <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/weather.png" width="45px" alt="" />
+          </div>
+
+          <p>Weather</p>
+        </div>
+        <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/camera.png" width="45px" alt="" />
+          </div>
+
+          <p>Camera</p>
+        </div>
+        <div class="icons">
+          <div class="icon-image flex justify-center">
+            <img src="footer images/list-icon-1423.png" width="45px" alt="" />
+          </div>
+
+          <p>Todo List</p>
+        </div>
+      </div>
+      <div
+        class="windows-off-main flex flex-coloumn align-center justify-center"
+      >
+        <div class="windows-off-message">
+          <p class="text">This PC is currently switched off</p>
         </div>
 
-        <div class="footer flex justify-between">
-            <div class="left-section-footer flex">
-                <div class="weather-image-div">
-                    <img src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
-                </div>
-                <div class="weather-details flex flex-coloumn justify-center">
-                    <p class="temperature">34°C</p>
-                    <p class="temperature-details">HAZE</p>
-                </div>
-            </div>
-            <div class="middle-section-footer flex align-center">
-                <div class="windows-logo">
-                    <img src="footer images/windows.png" alt="">
-                </div>
-                <div class="search-bar ">
-                    <i class="ri-search-line"></i>
-                    <input type="text" placeholder="Search">
-                </div>
-                <div class="taskbar flex">
-                    <div class="tasks">
-                        <img src="footer images/folder.png" alt="">
-                    </div>
-                    <div class="tasks">
-                        <img src="footer images/chrome.png" alt="">
-                    </div>
-                </div>
-                
-            </div>
-            <div class="right-section-footer flex align-center" >
-                <div class="footer-arrow-icon">
-                    <i class="ri-arrow-up-s-line"></i>
-                </div>
-                <div class="system-language">
-                    ENG <br>
-                    <span>IN</span>
-                </div>
-                <div style="gap: 6px;" class="wifi-audio-battery flex">
-                    <span><i class="ri-wifi-line"></i></span>
-                    <span><i class="ri-volume-up-line"></i></span>
-                    <span><i class="ri-battery-low-line"></i></span> 
-                </div>
-                <div class="time-date">
-                    20:07 <br> <span>20-07-2025</span>
-                </div>
-            </div>
+        <button class="power-button">Power on</button>
+      </div>
+      <div class="windows-opening flex align-center justify-center">
+        <div class="windows-opening-middle-div flex flex-coloumn align-center">
+          <div class="circle"></div>
+          <p class="text">Turning on the PC...</p>
         </div>
+      </div>
+      <div class="windows-shutdown flex align-center justify-center">
+        <div class="windows-shutdown-middle-div flex flex-coloumn align-center">
+          <div class="circle"></div>
+          <p class="text">Shutting down...</p>
+        </div>
+      </div>
+      <div class="start-menu">
+        <h2>Pinned</h2>
+        <div class="search-bar">
+          <i class="ri-search-line"></i>
+          <input
+            class="start-menu-searchbar"
+            type="text"
+            placeholder="Search"
+          />
+        </div>
+        <div class="icons-div">
+          <div class="icons">
+            <div class="icon-image flex justify-center">
+              <img src="footer images/chrome.png" width="45px" alt="" />
+            </div>
+
+            <p>Google Chome</p>
+          </div>
+          <div class="icons">
+            <div class="icon-image flex justify-center">
+              <img src="footer images/calculator.png" width="45px" alt="" />
+            </div>
+
+            <p>Calculator</p>
+          </div>
+        </div>
+        <div class="start-menu-footer flex justify-between">
+          <div class="profile-section flex">
+            <div class="profile-image">
+              <img
+                src="footer images/WhatsApp Image 2025-07-21 at 11.40.14_66dfc67c.jpg"
+                alt=""
+              />
+            </div>
+            <div class="profile-name">Gaurav Goswami</div>
+          </div>
+          <div class="shutdown-button flex align-center justify-center">
+            <i class="ri-shut-down-line"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer flex justify-between">
+        <div class="left-section-footer flex">
+          <div class="weather-image-div">
+            <img
+              src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+              alt=""
+            />
+          </div>
+          <div class="weather-details flex flex-coloumn justify-center">
+            <p class="temperature">34°C</p>
+            <p class="temperature-details">HAZE</p>
+          </div>
+        </div>
+        <div class="middle-section-footer flex align-center">
+          <div class="windows-logo">
+            <img src="footer images/windows.png" alt="" />
+          </div>
+          <div class="search-bar">
+            <i class="ri-search-line"></i>
+            <input type="text" placeholder="Search" />
+          </div>
+          <div class="taskbar flex">
+            <div class="tasks">
+              <img src="footer images/folder.png" alt="" />
+            </div>
+            <div class="tasks">
+              <img src="footer images/chrome.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="right-section-footer flex align-center">
+          <div class="footer-arrow-icon">
+            <i class="ri-arrow-up-s-line"></i>
+          </div>
+          <div class="system-language">
+            ENG <br />
+            <span>IN</span>
+          </div>
+          <div style="gap: 6px" class="wifi-audio-battery flex">
+            <span><i class="ri-wifi-line"></i></span>
+            <span><i class="ri-volume-up-line"></i></span>
+            <span><i class="ri-battery-low-line"></i></span>
+          </div>
+          <div class="time-date">
+            20:07 <br />
+            <span>20-07-2025</span>
+          </div>
+        </div>
+      </div>
     </div>
-   <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
