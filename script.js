@@ -36,7 +36,8 @@ document.querySelector('.power-button').addEventListener('click',()=>{
 let calculatorIcon=document.querySelector('.calculatorIcon');
 let calculatorWindow=document.querySelector('.calculator-window');
 let navigations=document.querySelector('.navigations')
-calculatorIcon.addEventListener('dblclick',()=>{
+let appWindow=document.querySelector('.app-window')
+calculatorIcon.addEventListener('click',()=>{
     navigations.style.display='block';
     navigations.style.zIndex=++window.maxZ || (windowsLogo.maxZ=2);
 
@@ -50,8 +51,11 @@ document.querySelector('.green-circle').addEventListener('click',()=>{
     console.log('clicked')
     navigations.style.top='0px';
     navigations.style.left='0px';
-    navigations.style.height='90%';
-    navigations.style.width='100%';
+    navigations.style.height='96%';
+    navigations.style.width='100vw';
+    appWindow.style.width='100%';
+    appWindow.style.height='96%';
+    
     
 
 })
@@ -60,4 +64,5 @@ document.querySelector('.yellow-circle').addEventListener('click',()=>{
     navigations.style.left='100px';
     navigations.style.height='71%';
     navigations.style.width='41%';
+    appWindow.style.resize='both';
 })

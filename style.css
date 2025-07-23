@@ -401,6 +401,7 @@ i{
     z-index: 1;
     resize: none;
     overflow: hidden;
+    resize: both;
     
     
 
@@ -411,7 +412,7 @@ i{
     width: 100%;
     border: none;
     overflow: hidden;
-    resize: none;
+    
     
 }
 
@@ -426,6 +427,7 @@ i{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     display: none;
+ 
 
     
 }
