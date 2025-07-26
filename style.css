@@ -465,5 +465,5 @@ i{
     background-color: yellow;
 }
 .navigations{
-    transition: all 0.2s ease-in;
+    transition: height,width,display 0.2s ease-out;
 }

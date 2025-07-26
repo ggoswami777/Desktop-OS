@@ -81,6 +81,7 @@ windowsLogo.addEventListener("click", () => {
     startMenu.style.bottom = "-1000px";
   }
 });
+
 // shutting down stuff
 shutDownButton.addEventListener("click", () => {
   windowsShutdownPage.style.display = "flex";
@@ -152,16 +153,16 @@ function openingWindow(iconName) {
       const appWindow = document.querySelector(`.${iconLowerName}-window`);
       if (navWindow) {
         navWindow.style.display = "block";
-        // makeDraggable(navWindow);
+        const dragHandle=navWindow.querySelector('.circles-div');
+        makeDraggable(dragHandle,navWindow);
         navWindow.style.zIndex = ++window.maxZ || (window.maxZ = 2);
         // navWindow.style.height='fit-content';
         // navWindow.style.minHeight='69%';
-        
       }
 
-      const closeBtn=navWindow.querySelector(".red-circle");
-      const maximizeBtn=navWindow.querySelector(".green-circle");
-      const minimizeBtn=navWindow.querySelector('.yellow-circle');
+      const closeBtn = navWindow.querySelector(".red-circle");
+      const maximizeBtn = navWindow.querySelector(".green-circle");
+      const minimizeBtn = navWindow.querySelector(".yellow-circle");
       closeBtn.addEventListener("click", () => {
         navWindow.style.display = "none";
       });
@@ -186,26 +187,33 @@ function openingWindow(iconName) {
     }
   });
 }
-function makeDraggable(el){
-  let isDragging=false;
-  
-  let offsetX,offsetY;
-  el.addEventListener('mousedown',(e)=>{
-    isDragging=true;
-    const rect=el.getBoundingClientRect();
-    offsetX=e.clientX-rect.left;
-    offsetY=e.clientY-rect.top;
-    el.style.position='absolute';
-    el.style.zIndex=++window.maxZ || (window.maxZ=2);
-  })
-  document.addEventListener('mousemove',(e)=>{
-    if(isDragging){
-      el.style.left=`${e.clientX-offsetX}px`;
-      el.style.top=`${e.clientY-offsetY}px`;
-    }
-    document.addEventListener('mouseup',()=>{
-      isDragging=false;
-    })
-  })
-}
+function makeDraggable(dragHandle,el) {
+  let isDragging = false;
 
+  let offsetX, offsetY;
+
+  el.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    console.log('clientX=',e.clientX);
+    console.log('clientY=',e.clientY);
+  
+    const rect = el.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    el.style.position = "absolute";
+    el.style.zIndex = ++window.maxZ || (window.maxZ = 2);
+  });
+  dragHandle.addEventListener("mousemove", (e) => {
+
+      if (isDragging) {
+        el.style.left = `${e.clientX - offsetX}px`;
+        el.style.top = `${e.clientY - offsetY}px`;
+        e.stopPropagation();
+      }
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+    
+  });
+
+}
