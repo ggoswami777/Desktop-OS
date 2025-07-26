@@ -39,10 +39,9 @@ let icons = [
   {
     id: Date.now(),
     image: "footer images/list-icon-1423.png",
-    name: " TODO List",
+    name: " TODOList",
     iconName: "todoListIcon",
   },
-  
 ];
 
 renderIconList();
@@ -59,19 +58,20 @@ function renderIconList() {
           <p>${icon.name}</p>
         </div>
         `;
-
   });
   document.querySelector(".desktop-icons-div").innerHTML = iconsHTML;
-//   document.querySelectorAll('.icons').forEach((icon)=>{
-//   icon.addEventListener('click',()=>{
-//     console.log(icon.iconName);
-//   })
-// })
-icons.forEach(icon=>{
-  document.querySelector(`.${icon.iconName}`).addEventListener('click',()=>{
-    openingWindow(icon.iconName);
-  })
-})
+  //   document.querySelectorAll('.icons').forEach((icon)=>{
+  //   icon.addEventListener('click',()=>{
+  //     console.log(icon.iconName);
+  //   })
+  // })
+  icons.forEach((icon) => {
+    document
+      .querySelector(`.${icon.iconName}`)
+      .addEventListener("click", () => {
+        openingWindow(icon.iconName);
+      });
+  });
 }
 
 windowsLogo.addEventListener("click", () => {
@@ -103,14 +103,15 @@ document.querySelector(".power-button").addEventListener("click", () => {
 //calculator
 
 generatingWindows();
-function generatingWindows(){
-  let windowHTML='';
-  icons.forEach(icon=>{
-      let iconLowerName=(icon.name).trim().toLowerCase();
-      console.log(`opening ${iconLowerName}`);
-      windowHTML+=`
+function generatingWindows() {
+  let windowHTML = "";
+  icons.forEach((icon) => {
+    let iconLowerName = icon.name.trim().toLowerCase();
+    console.log(`opening ${iconLowerName}`);
+    windowHTML += `
         <div class="navigations ${iconLowerName}-nav " style="position:absolute;
-    height: 71%;
+    height:71%;
+ 
     width: 41%;
     top: 100px;
     left: 100px;
@@ -139,55 +140,72 @@ function generatingWindows(){
     overflow: hidden;"></iframe>
         </div>
       </div>
-      `
-    
-  })
-  document.querySelector('.main').insertAdjacentHTML('beforeend',windowHTML);
-
+      `;
+  });
+  document.querySelector(".main").insertAdjacentHTML("beforeend", windowHTML);
 }
-function openingWindow(iconName){
-  icons.forEach(icon=>{
-    if(icon.iconName===iconName){
-      let iconLowerName=(icon.name).trim().toLowerCase();
-      const navWindow=document.querySelector(`.${iconLowerName}-nav`);
-      if(navWindow){
-        navWindow.style.display='flex';
-        navWindow.style.zIndex=++window.maxZ ||(window.maxZ=2);
+function openingWindow(iconName) {
+  icons.forEach((icon) => {
+    if (icon.iconName === iconName) {
+      let iconLowerName = icon.name.trim().toLowerCase();
+      const navWindow = document.querySelector(`.${iconLowerName}-nav`);
+      const appWindow = document.querySelector(`.${iconLowerName}-window`);
+      if (navWindow) {
+        navWindow.style.display = "block";
+        // makeDraggable(navWindow);
+        navWindow.style.zIndex = ++window.maxZ || (window.maxZ = 2);
+        // navWindow.style.height='fit-content';
+        // navWindow.style.minHeight='69%';
+        
       }
+
+      const closeBtn=navWindow.querySelector(".red-circle");
+      const maximizeBtn=navWindow.querySelector(".green-circle");
+      const minimizeBtn=navWindow.querySelector('.yellow-circle');
+      closeBtn.addEventListener("click", () => {
+        navWindow.style.display = "none";
+      });
+      maximizeBtn.addEventListener("click", () => {
+        console.log("clicked");
+        navWindow.style.top = "0px";
+        navWindow.style.left = "0px";
+        navWindow.style.height = "96%";
+        navWindow.style.width = "100vw";
+        appWindow.style.width = "100%";
+        appWindow.style.height = "96%";
+
+        appWindow.style.resize = "none";
+      });
+      minimizeBtn.addEventListener("click", () => {
+        navWindow.style.top = "100px";
+        navWindow.style.left = "100px";
+        navWindow.style.height = "71%";
+        navWindow.style.width = "41%";
+        appWindow.style.resize = "both";
+      });
     }
+  });
+}
+function makeDraggable(el){
+  let isDragging=false;
+  
+  let offsetX,offsetY;
+  el.addEventListener('mousedown',(e)=>{
+    isDragging=true;
+    const rect=el.getBoundingClientRect();
+    offsetX=e.clientX-rect.left;
+    offsetY=e.clientY-rect.top;
+    el.style.position='absolute';
+    el.style.zIndex=++window.maxZ || (window.maxZ=2);
+  })
+  document.addEventListener('mousemove',(e)=>{
+    if(isDragging){
+      el.style.left=`${e.clientX-offsetX}px`;
+      el.style.top=`${e.clientY-offsetY}px`;
+    }
+    document.addEventListener('mouseup',()=>{
+      isDragging=false;
+    })
   })
 }
 
-
-
-// let calculatorIcon = document.querySelector(".calculatorIcon");
-// let calculatorWindow = document.querySelector(".calculator-window");
-// let navigations = document.querySelector(".navigations");
-// let appWindow = document.querySelector(".app-window");
-// calculatorIcon.addEventListener("click", () => {
-//   navigations.style.display = "block";
-//   navigations.style.zIndex = ++window.maxZ || (windowsLogo.maxZ = 2);
-// });
-document.querySelector(".red-circle").addEventListener("click", () => {
-  navigations.style.display = "none";
-
-});
-document.querySelector(".green-circle").addEventListener("click", () => {
-  console.log("clicked");
-  navigations.style.top = "0px";
-  navigations.style.left = "0px";
-  navigations.style.height = "96%";
-  navigations.style.width = "100vw";
-  appWindow.style.width = "100%";
-  appWindow.style.height = "96%";
-
-  appWindow.style.resize = "none";
-});
-document.querySelector(".yellow-circle").addEventListener("click", () => {
-  navigations.style.top = "100px";
-  navigations.style.left = "100px";
-  navigations.style.height = "71%";
-  navigations.style.width = "41%";
-  appWindow.style.resize = "both";
-
-});

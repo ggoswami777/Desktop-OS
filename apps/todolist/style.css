@@ -48,6 +48,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height:50vh;
+    overflow-y: auto;
 }
 .list{
     display: flex;

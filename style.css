@@ -8,12 +8,14 @@ html,body{
     width: 100%;
     height: 100vh;
     /* background-color: black; */
+    user-select: none;
+
 }
 p{
     color: white;
 }
 .main{
-    background-image: url('https://4kwallpapers.com/images/wallpapers/windows-logo-m1-chip-black-background-gradient-windows-10-5k-3840x2160-5918.jpg');
+    background-image: url('footer images/pexels-samandgos-709552.jpg');
     background-size: max(1200px, 100vw);
     height:100vh;
     position: relative;
@@ -287,6 +289,7 @@ i{
     width: 100%;
     background-color:#000;
     display: none;
+    z-index: 200;
 }
 .windows-shutdown-middle-div,.windows-opening-middle-div{
     height: 15vh;
@@ -335,6 +338,7 @@ i{
     z-index: 2;
     gap: 10px;
     display: none;
+    z-index: 200;
 
 }
 .power-button{
@@ -392,7 +396,7 @@ i{
   line-height: 1;
 }
 /* apps */
-.app-window{
+/* .app-window{
    
     
     width: 100%;
@@ -432,7 +436,6 @@ i{
  
 
     
-}
 .circles-div{
     width: 100%;
     height: 20px;
@@ -441,12 +444,14 @@ i{
     padding-left: 10px;
     gap: 8px;
     background-color:rgb(39, 39, 39);
+    cursor: move;
 }
 .circles-div div{
     align-items: flex-start;
     height: 15px;
     width: 15px;
     border-radius: 50%;
+    cursor: default;
 
 
 }
@@ -458,4 +463,7 @@ i{
 }
 .yellow-circle{
     background-color: yellow;
+}
+.navigations{
+    transition: all 0.2s ease-in;
 }
