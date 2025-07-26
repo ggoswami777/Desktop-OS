@@ -39,7 +39,7 @@ let icons = [
   {
     id: Date.now(),
     image: "footer images/list-icon-1423.png",
-    name: " List",
+    name: " TODO List",
     iconName: "todoListIcon",
   },
   
@@ -59,8 +59,19 @@ function renderIconList() {
           <p>${icon.name}</p>
         </div>
         `;
+
   });
   document.querySelector(".desktop-icons-div").innerHTML = iconsHTML;
+//   document.querySelectorAll('.icons').forEach((icon)=>{
+//   icon.addEventListener('click',()=>{
+//     console.log(icon.iconName);
+//   })
+// })
+icons.forEach(icon=>{
+  document.querySelector(`.${icon.iconName}`).addEventListener('click',()=>{
+    openingWindow(icon.iconName);
+  })
+})
 }
 
 windowsLogo.addEventListener("click", () => {
@@ -90,14 +101,73 @@ document.querySelector(".power-button").addEventListener("click", () => {
 });
 //apps
 //calculator
-let calculatorIcon = document.querySelector(".calculatorIcon");
-let calculatorWindow = document.querySelector(".calculator-window");
-let navigations = document.querySelector(".navigations");
-let appWindow = document.querySelector(".app-window");
-calculatorIcon.addEventListener("click", () => {
-  navigations.style.display = "block";
-  navigations.style.zIndex = ++window.maxZ || (windowsLogo.maxZ = 2);
-});
+
+generatingWindows();
+function generatingWindows(){
+  let windowHTML='';
+  icons.forEach(icon=>{
+      let iconLowerName=(icon.name).trim().toLowerCase();
+      console.log(`opening ${iconLowerName}`);
+      windowHTML+=`
+        <div class="navigations ${iconLowerName}-nav " style="position:absolute;
+    height: 71%;
+    width: 41%;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    display:none;">
+        
+        <div class="app-window ${iconLowerName}-window" style="width: 100%;
+    height: 100%;
+    background-color: white;
+   
+    z-index: 1;
+    resize: none;
+    overflow: hidden;
+    resize: both;">
+          <div class="circles-div">
+          <div class="red-circle"></div>
+          <div class="yellow-circle"></div>
+          <div class="green-circle"></div>
+        </div>
+          <iframe src="apps/${iconLowerName}/index.html" frameborder="0" scrolling="no" style="height: 100%;
+    width: 100%;
+    border: none;
+    overflow: hidden;"></iframe>
+        </div>
+      </div>
+      `
+    
+  })
+  document.querySelector('.main').insertAdjacentHTML('beforeend',windowHTML);
+
+}
+function openingWindow(iconName){
+  icons.forEach(icon=>{
+    if(icon.iconName===iconName){
+      let iconLowerName=(icon.name).trim().toLowerCase();
+      const navWindow=document.querySelector(`.${iconLowerName}-nav`);
+      if(navWindow){
+        navWindow.style.display='flex';
+        navWindow.style.zIndex=++window.maxZ ||(window.maxZ=2);
+      }
+    }
+  })
+}
+
+
+
+// let calculatorIcon = document.querySelector(".calculatorIcon");
+// let calculatorWindow = document.querySelector(".calculator-window");
+// let navigations = document.querySelector(".navigations");
+// let appWindow = document.querySelector(".app-window");
+// calculatorIcon.addEventListener("click", () => {
+//   navigations.style.display = "block";
+//   navigations.style.zIndex = ++window.maxZ || (windowsLogo.maxZ = 2);
+// });
 document.querySelector(".red-circle").addEventListener("click", () => {
   navigations.style.display = "none";
 
