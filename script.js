@@ -215,5 +215,6 @@ function makeDraggable(dragHandle,el) {
       });
     
   });
+  
 
 }

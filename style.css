@@ -465,5 +465,9 @@ i{
     background-color: yellow;
 }
 .navigations{
-    transition: height,width,display 0.2s ease-out;
+    transition: height,width 0.2s ease-in;
+}
+.app-window{
+    min-height: 450px;
+    min-width: 270px;
 }
