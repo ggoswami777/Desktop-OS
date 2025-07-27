@@ -22,7 +22,8 @@ const originalfunction = async () => {
       </div>
       <div class="weather-content">
         <div class="left-section">
-          <div class="temperature">${temp_c}</div>
+          <div class="temperature">${temp_c}°C
+</div>
           <div class="weather-condition">${text}</div>
           <div class="other-weather-details">
             <p>Wind:${wind_kph} <br>Humidity:${humidity} <br>Last updated: ${last_updated}</p>

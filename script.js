@@ -1,3 +1,5 @@
+const BASE_URL =
+  "https://api.weatherapi.com/v1/current.json?key=1db180f23cb943889dd53144252707&q=delhi";
 let startMenu = document.querySelector(".start-menu");
 let windowsLogo = document.querySelector(".windows-logo");
 let shutDownButton = document.querySelector(".shutdown-button");
@@ -9,7 +11,7 @@ let icons = [
   {
     id: Date.now(),
     image: "footer images/chrome.png",
-    name: "Google Chrome",
+    name: "Chrome",
     iconName: "GoogleChromeIcon",
   },
   {
@@ -129,7 +131,9 @@ function generatingWindows() {
     z-index: 1;
     resize: none;
     overflow: hidden;
-    resize: both;">
+    resize: both;
+    border-radius: 8px
+    ">
           <div class="circles-div">
           <div class="red-circle"></div>
           <div class="yellow-circle"></div>
@@ -215,3 +219,26 @@ function makeDraggable(dragHandle, el) {
     isDragging = false;
   });
 }
+//footer works
+const footerWeather = async () => {
+  let response = await fetch(BASE_URL);
+  let data = await response.json();
+  let icon = data.current.condition.icon;
+  let text = data.current.condition.text;
+  let temp_c = data.current.temp_c;
+  let HTML=`
+    <div class="weather-image-div">
+            <img
+              src="${icon}"
+              alt=""
+            />
+          </div>
+          <div class="weather-details flex flex-coloumn justify-center">
+            <p class="temperature">${temp_c}°C
+</p>
+            <p class="temperature-details">${text}</p>
+          </div>
+  `
+  document.querySelector('.left-section-footer').innerHTML=HTML;
+};
+footerWeather();

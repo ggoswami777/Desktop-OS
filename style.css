@@ -443,13 +443,13 @@ i{
     align-items: center;
     padding-left: 10px;
     gap: 8px;
-    background-color:rgb(39, 39, 39);
+    background-color:oklab(15.906999999999998% -0.01093 -0.06632);
     cursor: move;
 }
 .circles-div div{
     align-items: flex-start;
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     cursor: default;
 
