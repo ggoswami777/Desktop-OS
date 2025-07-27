@@ -153,8 +153,8 @@ function openingWindow(iconName) {
       const appWindow = document.querySelector(`.${iconLowerName}-window`);
       if (navWindow) {
         navWindow.style.display = "block";
-        const dragHandle=navWindow.querySelector('.circles-div');
-        makeDraggable(dragHandle,navWindow);
+        const dragHandle = navWindow.querySelector(".circles-div");
+        makeDraggable(dragHandle, navWindow);
         navWindow.style.zIndex = ++window.maxZ || (window.maxZ = 2);
         // navWindow.style.height='fit-content';
         // navWindow.style.minHeight='69%';
@@ -187,16 +187,16 @@ function openingWindow(iconName) {
     }
   });
 }
-function makeDraggable(dragHandle,el) {
+function makeDraggable(dragHandle, el) {
   let isDragging = false;
 
   let offsetX, offsetY;
 
   el.addEventListener("mousedown", (e) => {
     isDragging = true;
-    console.log('clientX=',e.clientX);
-    console.log('clientY=',e.clientY);
-  
+    console.log("clientX=", e.clientX);
+    console.log("clientY=", e.clientY);
+
     const rect = el.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
@@ -204,17 +204,14 @@ function makeDraggable(dragHandle,el) {
     el.style.zIndex = ++window.maxZ || (window.maxZ = 2);
   });
   dragHandle.addEventListener("mousemove", (e) => {
-
-      if (isDragging) {
-        el.style.left = `${e.clientX - offsetX}px`;
-        el.style.top = `${e.clientY - offsetY}px`;
-        e.stopPropagation();
-      }
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-      });
-    
+    if (isDragging) {
+      el.style.left = `${e.clientX - offsetX}px`;
+      el.style.top = `${e.clientY - offsetY}px`;
+      e.stopPropagation();
+    }
   });
-  
 
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
 }

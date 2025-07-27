@@ -467,7 +467,7 @@ i{
 .navigations{
     transition: height,width 0.2s ease-in;
 }
-.app-window{
+/* .app-window{
     min-height: 450px;
     min-width: 270px;
-}
+} */
