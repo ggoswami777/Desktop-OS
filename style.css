@@ -201,6 +201,7 @@ i{
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    z-index: 5;
 
 }
 .start-menu>h2{
@@ -476,8 +477,8 @@ i{
   max-width: 30vw;
   width: 20vw;
   height: 40vh;
-  transition: all 0.3s ease-in;
-  bottom: 65px;
+  transition: all 0.35s ease-in;
+  bottom: -100%;
   right: 20px;
   padding: 20px;
 
@@ -587,7 +588,7 @@ i{
     background-color: black;
     width: 100vw;
     height: 100vh;
-    z-index: 5;
+    z-index: 1000;
     position: absolute;
     user-select: none;
     opacity: 0;

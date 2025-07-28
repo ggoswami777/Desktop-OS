@@ -45,6 +45,12 @@ let icons = [
     name: " TODOList",
     iconName: "todoListIcon",
   },
+  {
+    id: Date.now(),
+    image: "footer images/folder.png",
+    name: "Folder",
+    iconName: "folderIcon",
+  },
 ];
 
 renderIconList();
@@ -74,10 +80,10 @@ function renderIconList() {
 }
 
 windowsLogo.addEventListener("click", () => {
-  if (startMenu.style.bottom === "-1000px") {
+  if (startMenu.style.bottom === "-100%") {
     startMenu.style.bottom = "65px";
   } else {
-    startMenu.style.bottom = "-1000px";
+    startMenu.style.bottom = "-100%";
   }
 });
 
@@ -245,16 +251,121 @@ ${time}<br />
 <span>${dateString}</span>
 `;
 //footer wifi-status stuff
-let systemIcons = document.querySelectorAll('.wifi');
+let systemIcons = document.querySelectorAll(".wifi");
 
 systemIcons.forEach((icon) => {
-  icon.addEventListener('click', () => {
+  icon.addEventListener("click", () => {
     const currentBg = getComputedStyle(icon).backgroundColor;
-    
-    if (currentBg === 'rgba(255, 255, 255, 0.15)') {
-      icon.style.background = '#0078d7';
+
+    if (currentBg === "rgba(255, 255, 255, 0.15)") {
+      icon.style.background = "#0078d7";
     } else {
-      icon.style.background = 'rgba(255, 255, 255, 0.15)';
+      icon.style.background = "rgba(255, 255, 255, 0.15)";
     }
   });
 });
+let brightnessBar = document.querySelector(".brightness-bar");
+brightnessBar.value = 100;
+
+let brightnessDiv = document.querySelector(".brightness-div");
+brightnessBar.addEventListener("input", () => {
+  let brightnessValue = (brightnessBar.value / 100 - 1) * -1;
+  brightnessDiv.style.opacity = brightnessValue;
+});
+let systemSettings = document.querySelector(".system-settings");
+let wifiAudioBattery = document.querySelector(".wifi-audio-battery");
+wifiAudioBattery.addEventListener("click", () => {
+  if (systemSettings.style.bottom === "-1000px") {
+    systemSettings.style.bottom = "65px";
+  } else {
+    systemSettings.style.bottom = "-1000px";
+  }
+});
+
+let elements = document.querySelectorAll(".chromeTaskBar, .chrome-icon");
+elements.forEach((chromeTaskBar) => {
+  chromeTaskBar.addEventListener("click", () => {
+    const navWindow = document.querySelector(".chrome-nav");
+    navWindow.style.display = "block";
+    const closeBtn = navWindow.querySelector(".red-circle");
+    const maximizeBtn = navWindow.querySelector(".green-circle");
+    const minimizeBtn = navWindow.querySelector(".yellow-circle");
+    closeBtn.addEventListener("click", () => {
+      navWindow.style.display = "none";
+    });
+    maximizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "0px";
+      navWindow.style.left = "0px";
+      navWindow.style.height = "96%";
+      navWindow.style.width = "100vw";
+      appWindow.style.width = "100%";
+      appWindow.style.height = "96%";
+
+      appWindow.style.resize = "none";
+    });
+    minimizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "100px";
+      navWindow.style.left = "100px";
+      navWindow.style.height = "71%";
+      navWindow.style.width = "41%";
+      appWindow.style.resize = "both";
+    });
+  });
+});
+let startMenuCalculator=document.querySelector('.calculator-icon');
+startMenuCalculator.addEventListener('click',()=>{
+  const navWindow=document.querySelector('.calculator-nav');
+  navWindow.style.display = "block";
+    const closeBtn = navWindow.querySelector(".red-circle");
+    const maximizeBtn = navWindow.querySelector(".green-circle");
+    const minimizeBtn = navWindow.querySelector(".yellow-circle");
+    closeBtn.addEventListener("click", () => {
+      navWindow.style.display = "none";
+    });
+    maximizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "0px";
+      navWindow.style.left = "0px";
+      navWindow.style.height = "96%";
+      navWindow.style.width = "100vw";
+      appWindow.style.width = "100%";
+      appWindow.style.height = "96%";
+
+      appWindow.style.resize = "none";
+    });
+    minimizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "100px";
+      navWindow.style.left = "100px";
+      navWindow.style.height = "71%";
+      navWindow.style.width = "41%";
+      appWindow.style.resize = "both";
+    });
+  
+})
+let folderTaskBar=document.querySelector('.folderTaskBar');
+folderTaskBar.addEventListener('click',()=>{
+  const navWindow=document.querySelector('.folder-nav');
+  navWindow.style.display = "block";
+    const closeBtn = navWindow.querySelector(".red-circle");
+    const maximizeBtn = navWindow.querySelector(".green-circle");
+    const minimizeBtn = navWindow.querySelector(".yellow-circle");
+    closeBtn.addEventListener("click", () => {
+      navWindow.style.display = "none";
+    });
+    maximizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "0px";
+      navWindow.style.left = "0px";
+      navWindow.style.height = "96%";
+      navWindow.style.width = "100vw";
+      appWindow.style.width = "100%";
+      appWindow.style.height = "96%";
+
+      appWindow.style.resize = "none";
+    });
+    minimizeBtn.addEventListener("click", () => {
+      navWindow.style.top = "100px";
+      navWindow.style.left = "100px";
+      navWindow.style.height = "71%";
+      navWindow.style.width = "41%";
+      appWindow.style.resize = "both";
+    });
+})
