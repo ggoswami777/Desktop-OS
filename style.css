@@ -514,7 +514,7 @@ i{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 15px;
-  padding: 5px;
+  padding: 5px !important;
   background: transparent;
   gap: 10px;
 }
