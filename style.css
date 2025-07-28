@@ -516,7 +516,7 @@ i{
   row-gap: 15px;
   padding: 5px !important;
   background: transparent;
-  gap: 10px;
+  gap: 5px;
 }
 
 .main-system-settings div {
@@ -524,6 +524,7 @@ i{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-right: 5px;
 
   width: 75px;
   height: 65px;
