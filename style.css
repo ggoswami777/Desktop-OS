@@ -471,3 +471,125 @@ i{
     min-height: 450px;
     min-width: 270px;
 } */
+.system-settings {
+  position: absolute;
+  max-width: 30vw;
+  width: 20vw;
+  height: 40vh;
+  transition: all 0.3s ease-in;
+  bottom: 65px;
+  right: 20px;
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.main-system-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 15px;
+  padding: 5px;
+  background: transparent;
+  gap: 10px;
+}
+
+.main-system-settings div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 75px;
+  height: 65px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.main-system-settings div:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main-system-settings span {
+  font-size: 12px;
+  font-weight: 650;
+  color: white;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.main-system-settings i {
+  font-size: 20px;
+  color: white;
+}
+
+.display-audio {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.display,
+.audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.display-audio i {
+  font-size: 18px;
+  color: white;
+}
+
+.display-audio input[type="range"] {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 4px;
+  background: #0078d7;
+  border-radius: 2px;
+  outline: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.display-audio input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0078d7;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.display-audio input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.display-audio input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0078d7;
+  cursor: pointer;
+}
+.brightness-div{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    position: absolute;
+    user-select: none;
+    opacity: 0;
+    pointer-events: none;
+}

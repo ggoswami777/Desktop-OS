@@ -1,3 +1,4 @@
+import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 const BASE_URL =
   "https://api.weatherapi.com/v1/current.json?key=1db180f23cb943889dd53144252707&q=delhi";
 let startMenu = document.querySelector(".start-menu");
@@ -44,7 +45,6 @@ let icons = [
     name: " TODOList",
     iconName: "todoListIcon",
   },
- 
 ];
 
 renderIconList();
@@ -63,11 +63,7 @@ function renderIconList() {
         `;
   });
   document.querySelector(".desktop-icons-div").innerHTML = iconsHTML;
-  //   document.querySelectorAll('.icons').forEach((icon)=>{
-  //   icon.addEventListener('click',()=>{
-  //     console.log(icon.iconName);
-  //   })
-  // })
+
   icons.forEach((icon) => {
     document
       .querySelector(`.${icon.iconName}`)
@@ -111,7 +107,7 @@ function generatingWindows() {
   let windowHTML = "";
   icons.forEach((icon) => {
     let iconLowerName = icon.name.trim().toLowerCase();
-    console.log(`opening ${iconLowerName}`);
+
     windowHTML += `
         <div class="navigations ${iconLowerName}-nav " style="position:absolute;
     height:71%;
@@ -172,7 +168,6 @@ function openingWindow(iconName) {
         navWindow.style.display = "none";
       });
       maximizeBtn.addEventListener("click", () => {
-        console.log("clicked");
         navWindow.style.top = "0px";
         navWindow.style.left = "0px";
         navWindow.style.height = "96%";
@@ -199,8 +194,6 @@ function makeDraggable(dragHandle, el) {
 
   el.addEventListener("mousedown", (e) => {
     isDragging = true;
-    console.log("clientX=", e.clientX);
-    console.log("clientY=", e.clientY);
 
     const rect = el.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
@@ -227,7 +220,7 @@ const footerWeather = async () => {
   let icon = data.current.condition.icon;
   let text = data.current.condition.text;
   let temp_c = data.current.temp_c;
-  let HTML=`
+  let HTML = `
     <div class="weather-image-div">
             <img
               src="${icon}"
@@ -239,7 +232,29 @@ const footerWeather = async () => {
 </p>
             <p class="temperature-details">${text}</p>
           </div>
-  `
-  document.querySelector('.left-section-footer').innerHTML=HTML;
+  `;
+  document.querySelector(".left-section-footer").innerHTML = HTML;
 };
 footerWeather();
+let today = dayjs();
+console.log(today);
+const dateString = today.format("D-M-YYYY");
+const time = today.format("HH:mm");
+document.querySelector(".time-date").innerHTML = `
+${time}<br />
+<span>${dateString}</span>
+`;
+//footer wifi-status stuff
+let systemIcons = document.querySelectorAll('.wifi');
+
+systemIcons.forEach((icon) => {
+  icon.addEventListener('click', () => {
+    const currentBg = getComputedStyle(icon).backgroundColor;
+    
+    if (currentBg === 'rgba(255, 255, 255, 0.15)') {
+      icon.style.background = '#0078d7';
+    } else {
+      icon.style.background = 'rgba(255, 255, 255, 0.15)';
+    }
+  });
+});
