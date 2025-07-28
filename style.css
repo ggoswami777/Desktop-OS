@@ -499,7 +499,7 @@ i{
   transition: all 0.35s ease-in;
   bottom: -100%;
   right: 20px;
-  padding: 20px;
+  padding: 10px;
 
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(20px);
@@ -514,7 +514,7 @@ i{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 15px;
-  padding: 5px !important;
+  padding: 0px !important;
   background: transparent;
   gap: 5px;
 }
