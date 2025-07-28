@@ -369,3 +369,10 @@ folderTaskBar.addEventListener('click',()=>{
       appWindow.style.resize = "both";
     });
 })
+//changing wallpaper
+let wallpaperTaskBar=document.querySelector('.wallpaperTaskBar');
+let wallpaper=document.querySelector('.main');
+wallpaperTaskBar.addEventListener('click',()=>{
+  const randomNum=Math.floor(Math.random()*5)+1;
+  wallpaper.style.backgroundImage=`url('footer images/wallpaper${randomNum}.jpg')`;
+})
